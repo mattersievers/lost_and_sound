@@ -75,15 +75,15 @@ db.once('open', async () => {
             lastName: 'Doe',
             Email: 'janedoe@aol.com',
             Password: 'abc456',
-            savedEquipment: [equipment[1]._id]
+            savedEquipment: [equipment[1]._id, equipment[4]._id ]
         }, 
         {
             firstName: 'Jack',
             lastName: 'Deere',
             Email: 'jackdeere@aol.com',
             Password: 'xyz987',
-            savedEquipment: [equipment[2]._id,equipment[2]._id]
-        },
+            savedEquipment: [equipment[2]._id, equipment[3]._id]
+        }
     ]);
 
     console.log('users seeded');

@@ -14,6 +14,8 @@ const typeDefs = gql`
     }
 
     type Mutation {
-        
+
     }
 `;    
+
+module.exports = typeDefs;

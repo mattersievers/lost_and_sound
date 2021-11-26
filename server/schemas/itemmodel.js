@@ -14,8 +14,6 @@ const ItemSchema = new mongoose.Schema({
   time: String,
   active: Boolean,
   category: String,
-  tags: Array,
-  imageUrl: String,
   date: Date
 });
 

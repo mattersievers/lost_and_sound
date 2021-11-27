@@ -1,12 +1,13 @@
 const mongoose = require('mongoose');
-const jwt = require('jsonwebtoken');
-const config = require('./../../config.json');
+const Equipment = require('./itemmodel');
+const bcrypt = require('bcrypt');
 
-const UserSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
-  email: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
+  savedEquipment: [Equipment.schema],
   resetPasswordKey: String,
   about: String,
   country: String,
@@ -16,12 +17,19 @@ const UserSchema = new mongoose.Schema({
   registrationDate: Date
 });
 
-UserSchema.methods.generateAuthToken = function() {
-  const token = jwt.sign(
-    { _id: this._id, isAdmin: this.isAdmin },
-    config.jwtPrivateKey
-  );
-  return token;
+// set up pre-save middleware to create password
+userSchema.pre('save', async function(next) {
+  if (this.isNew || this.isModified('password')) {
+    const saltRounds = 10;
+    this.password = await bcrypt.hash(this.password, saltRounds);
+  }
+
+  next();
+});
+
+// compare the incoming password with the hashed password
+userSchema.methods.isCorrectPassword = async function(password) {
+  return await bcrypt.compare(password, this.password);
 };
 
 // userSchema.pre('save', function(next) {
@@ -29,4 +37,4 @@ UserSchema.methods.generateAuthToken = function() {
 //   next();
 // });
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('User', userSchema);

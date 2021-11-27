@@ -22,4 +22,4 @@ ItemSchema.pre('save', function(next) {
   next();
 });
 
-module.exports = mongoose.model('Item', ItemSchema);
+module.exports = mongoose.model('Equipment', ItemSchema);

@@ -37,9 +37,13 @@ const typeDefs = gql`
         equipment: [Equipment]
     }
 
+    type Auth {
+        token: ID
+        user: User
+    }
     type Mutation {
         login(email: String!, password: String!): Auth
-        addUser(username: String!, email: String!, password: String!): Auth
+        addUser(firstName: String!, lastName:String!, email: String!, password: String!): Auth
         saveEquipment(input: EquipmentInput): User
         removeEquipment(_id: ID!): User
         updateEquipment(_id: ID!): Equipment

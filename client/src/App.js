@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import LogIn from './components/LogIn';
 import SignUp from './components/SignUp'
+
 import './App.css';
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
   const [currentPageSelection, setCurrentPageSelection] = useState(pages[0]);
 
   return (
+
     <div className="pageContent d-flex flex-row justify-content-between">
       <Header
       pages={pages}
@@ -30,6 +32,7 @@ function App() {
       }
 
       </main>
+
     </div>
   );
 }

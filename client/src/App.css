@@ -1,6 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Ruthie&display=swap');
+
+:root{
+  /* --------------- CSS HEX ------------------------ */
+  --light-blue: #86BBD8;
+  --dark-blue: #336394;
+  --green: #86d8a1;
+}
+
+*{
+  box-sizing: border-box;
+  box-sizing: inherit;
+}
 .App {
   text-align: center;
 }
+
 
 .App-logo {
   height: 40vmin;

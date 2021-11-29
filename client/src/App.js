@@ -8,6 +8,7 @@ import EquipmentRegistration from './components/EquipmentRegistration';
 import './App.css';
 
 function App() {
+
   const [pages] = useState(['Home', 'LogIn', 'SignUp', 'EquipmentRegistration']);
   const [currentPageSelection, setCurrentPageSelection] = useState(pages[0]);
 
@@ -20,17 +21,20 @@ function App() {
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
      crossorigin=""></script>
+
       <Header
       pages={pages}
       currentPageSelection = {currentPageSelection}
       setCurrentPageSelection = {setCurrentPageSelection} />
       
       <main>
+
       {currentPageSelection === "Home" && <Home /> }
 
       {currentPageSelection === "LogIn" && <LogIn /> }
 
       {currentPageSelection === "SignUp" && <SignUp /> }
+
 
       {currentPageSelection === "EquipmentRegistration" && <EquipmentRegistration /> }
 

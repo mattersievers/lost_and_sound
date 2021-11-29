@@ -7,16 +7,11 @@ import SignUp from './components/SignUp'
 import './App.css';
 
 function App() {
-  const [pages] = useState(['Home', 'LogIn', 'SignUp']);
+  const [pages] = useState(['Home', 'Log In', 'Sign Up']);
   const [currentPageSelection, setCurrentPageSelection] = useState(pages[0]);
 
   return (
-<<<<<<< HEAD
     <div className="pageContent d-flex flex-row space-between">
-=======
-
-    <div className="pageContent d-flex flex-row justify-content-between">
->>>>>>> c41aae2ab117f28d5cb24b2f27ea4a19de858690
       <Header
       pages={pages}
       currentPageSelection = {currentPageSelection}
@@ -27,11 +22,11 @@ function App() {
           <Home />
         }
 
-        {currentPageSelection === "LogIn" && 
+        {currentPageSelection === "Log In" && 
           <LogIn />
         }
 
-        {currentPageSelection === "SignUp" && 
+        {currentPageSelection === "Sign Up" && 
           <SignUp />
         }
 

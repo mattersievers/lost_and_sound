@@ -7,8 +7,8 @@ const Navigation = (props) => {
     })
 
     return (
-        <section className="d-flex align-items-end navBtnContainer">
-        <ul className="d-flex flex-row justify-content-between">
+        <section className="">
+        <ul className="flex-row">
                     {props.pages.map((page,i) => (
                         <li className="nav-item" key={i}>
                             <span 

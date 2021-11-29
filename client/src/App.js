@@ -10,24 +10,24 @@ function App() {
   const [currentPageSelection, setCurrentPageSelection] = useState(pages[0]);
 
   return (
-    <div className="pageContent d-flex flex-row justify-content-between">
+    <div className="pageContent d-flex flex-row space-between">
       <Header
       pages={pages}
       currentPageSelection = {currentPageSelection}
       setCurrentPageSelection = {setCurrentPageSelection} />
       
       <main>
-      {currentPageSelection === "Home" && 
-        <Home />
-      }
+        {currentPageSelection === "Home" && 
+          <Home />
+        }
 
-      {currentPageSelection === "LogIn" && 
-        <LogIn />
-      }
+        {currentPageSelection === "LogIn" && 
+          <LogIn />
+        }
 
-      {currentPageSelection === "SignUp" && 
-        <SignUp />
-      }
+        {currentPageSelection === "SignUp" && 
+          <SignUp />
+        }
 
       </main>
     </div>

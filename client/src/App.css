@@ -50,3 +50,8 @@
     transform: rotate(360deg);
   }
 }
+
+#mapContainer{ 
+  height: 100px;
+  width: 100px;
+}

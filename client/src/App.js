@@ -31,7 +31,7 @@ const client = new ApolloClient({
 
 function App() {
   const [pages] = useState(['Home', 'LogIn', 'SignUp']);  
-  const [loggedInPages] = useState(['Equipment Registration', 'My Equipment']); 
+  const [loggedInPages] = useState(['Home','Equipment Registration', 'My Equipment']); 
   
   const [currentPageSelection, setCurrentPageSelection] = useState(pages[0]);
 
@@ -59,7 +59,7 @@ function App() {
 
         {currentPageSelection === "SignUp" && <SignUp /> }
 
-        {currentPageSelection === "EquipmentRegistration" && <EquipmentRegistration /> }
+        {currentPageSelection === "Equipment Registration" && <EquipmentRegistration /> }
 
         </main>
       </div>

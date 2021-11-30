@@ -30,8 +30,8 @@ const client = new ApolloClient({
 });
 
 function App() {
-  const [pages] = useState(['Home', 'LogIn', 'SignUp','Equipment Registration', 'My Equipment']);  
-  const loggedIn 
+  const [pages] = useState(['Home', 'LogIn', 'SignUp']);  
+  const [loggedInPages] = useState(['Equipment Registration', 'My Equipment']); 
   
   const [currentPageSelection, setCurrentPageSelection] = useState(pages[0]);
 
@@ -44,9 +44,10 @@ function App() {
       <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
       integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
       crossorigin=""></script>
-
+      
+      
         <Header
-        pages={pages}
+        pages={Auth.loggedIn() ? loggedInPages:pages}
         currentPageSelection = {currentPageSelection}
         setCurrentPageSelection = {setCurrentPageSelection} />
         

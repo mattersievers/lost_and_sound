@@ -8,13 +8,10 @@ const Navigation = (props) => {
     },[])
 
     if(Auth.loggedIn()) {
-        let pageList = props.pages
-        pageList.splice(0,3)
-        console.log(pageList, 'pageList')
         return (
             <section className="">
             <ul className="flex-row">
-                        {pageList.map((page,i) => (
+                        {props.pages.map((page,i) => (
                             <li className="nav-item" key={i}>
                                 <span 
                                     className={`navBtn ${props.currentPageSelection === page && 'navBtnActivated'}`} 
@@ -32,12 +29,10 @@ const Navigation = (props) => {
             </section>
         );
     } else {
-        let pageList = props.pages
-        pageList.splice(3,2);
         return (
             <section className="">
             <ul className="flex-row">
-                        {pageList.map((page,i) => (
+                        {props.pages.map((page,i) => (
                             <li className="nav-item" key={i}>
                                 <span 
                                     className={`navBtn ${props.currentPageSelection === page && 'navBtnActivated'}`} 

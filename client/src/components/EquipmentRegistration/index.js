@@ -13,10 +13,18 @@ const EquipmentRegistration = () =>{
     useEffect(() => {
       console.log(equipmentFormData)},
       [equipmentFormData]);
-
+      
+    
     const handleInputChange = (event) => {
       const { name, value } = event.target;
-      setEquipmentFormData({ ...equipmentFormData, [name]: value, location: position.toString()});
+      if (name === "lost" && value === "true"){
+        setEquipmentFormData({...equipmentFormData, lost: true})
+      } else if (name === "lost" && value === "false"){
+        setEquipmentFormData({...equipmentFormData, lost: false})
+      } else {
+        setEquipmentFormData({ ...equipmentFormData, [name]: value, location: position.toString()});
+      }
+
     };
 
     const handleFormSubmit= async(event)=>{
@@ -29,19 +37,23 @@ const EquipmentRegistration = () =>{
         }
         
         try{
-          if(equipmentFormData.brand.length || equipmentFormData.category.length || equipmentFormData.model.length || equipmentFormData.description.length || equipmentFormData.serialNumber.length || equipmentFormData.image.length || equipmentFormData.location.length){
+          if(equipmentFormData.brand.length && equipmentFormData.category.length && equipmentFormData.model.length && equipmentFormData.description.length && equipmentFormData.serialNumber.length && equipmentFormData.image.length && equipmentFormData.location.length){
           const {data} = await saveEquipment({
             variables: { input: {...equipmentFormData}}
           });
           console.log(data)
-        } else {setShowAlert(true); return;}
+        } else {setShowAlert(true); return}
         } catch (err) {
           console.error(err);
           setShowAlert(true);
         }
-    
         setEquipmentFormData({category: '', brand: '', model: '', description:'', serialNumber:'', image: '', location: '', lost: false });
-
+        document.getElementById("category").value = '';
+        document.getElementById("brand").value = '';
+        document.getElementById("model").value = '';
+        document.getElementById("description").value = '';
+        document.getElementById("serialNumber").value = '';
+        document.getElementById("image").value = '';
     };
 
     // gets location of user and implements a draggable icon on the map
@@ -128,7 +140,7 @@ const EquipmentRegistration = () =>{
                   
                   
                   {showAlert && <p>Something went wrong. Make sure the form is complete and try again.</p>}
-                  <button type="submit">Submit</button>
+                  <button type="submit" >Submit</button>
                 </form>
         </>
     );

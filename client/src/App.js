@@ -4,6 +4,7 @@ import Home from './components/Home';
 import LogIn from './components/LogIn';
 import SignUp from './components/SignUp';
 import EquipmentRegistration from './components/EquipmentRegistration';
+import MyEquipment from './components/MyEquipment';
 
 import './App.css';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
@@ -60,6 +61,8 @@ function App() {
         {currentPageSelection === "SignUp" && <SignUp /> }
 
         {currentPageSelection === "Equipment Registration" && <EquipmentRegistration /> }
+
+        {currentPageSelection === "My Equipment" && <MyEquipment />}
 
         </main>
       </div>

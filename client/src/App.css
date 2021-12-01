@@ -1,52 +1,134 @@
-@import url('https://fonts.googleapis.com/css2?family=Ruthie&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
 
 :root{
   /* --------------- CSS HEX ------------------------ */
   --light-blue: #86BBD8;
   --dark-blue: #336394;
   --green: #86d8a1;
+  --dark: #6d6b6b;
+  --light: #ebe7e2;
+  --white: #fdfdfd;
+  --black: #000000;
 }
 
-*{
-  box-sizing: border-box;
-  box-sizing: inherit;
+/* ---- Main Body ---- */
+
+main{
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  background-image: url(./assets/images/piano.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
-.App {
+
+.pageContent{
+  background-color: var(--light);
+  width: 100vw;
+}
+
+/* ---- Nav Bar & Header ----*/
+.header{
+  background-color: var(--dark);
+  padding: 3vh;
+  width: 100%;
+
+}
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.name{
+  color: var(--light);
+  font-size: 4vmax;
+  margin-left: 3vw;
+  text-shadow: 2px 1px black;
+}
+
+li {
+  list-style-type: none;
+}
+
+.nav-item li { 
+  display: flex-row;
+  justify-content: space-between;
+
+}
+
+.navBar-header{
+margin-right: 10%;
+width: 100%;
+}
+
+.navBtn {
+  color: var(--white);
+  text-shadow: 1px 1px 3px var(--black);
+  font-size: 3vmin;
+  padding: 0.5vw;
+  margin: 1vw;
+  text-decoration: none;
+}
+
+.navBtn:hover {
+  color: var(--light-blue);
+  text-shadow: 2px 2px var(--black);
+  cursor: pointer;
+}
+
+.navBtn:active {
+  color: var(--light-blue);
+  
+}
+
+.navBtnActivated{
+  color: var(--light-blue);
+}
+
+
+/* ---- Home ---- */
+.home{
+  color: var(--black);
+}
+
+.home div{
+  background-color:rgba(235, 226, 226, 0.6);
+  margin: 2vmax;
+}
+
+.home h1 {
+  padding: 3vmax;
+  height: 25%;
+  font-size: 7vmin;
   text-align: center;
 }
 
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.home p{
+  width: 50vw;
+  height: 50%px;
+  padding: 3vmax;
+  font-size: 4vmin;
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.sectionHead {
+  width: 50vw;
+  height: 25%;
+  font-size: 4vmin;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.userEquipment {
+  width: 40vw;
+  height: 50%;
+  font-size: 4vmin;
+  padding-left: 10px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.userName {
+  text-decoration: underline;
+  text-align: center;
 }

@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    
 }
 
 :root{
@@ -18,17 +17,18 @@
 /* ---- Main Body ---- */
 
 main{
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   width: 100%;
   background-image: url(./assets/images/piano.png);
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
 
 .pageContent{
   background-color: var(--light);
   width: 100vw;
-  
 }
 
 /* ---- Nav Bar & Header ----*/

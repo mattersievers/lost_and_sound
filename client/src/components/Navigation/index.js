@@ -5,7 +5,7 @@ const Navigation = (props) => {
 
     useEffect(() => {
         document.title = 'Lost and Sound ' + props.currentPageSelection;
-    },[])
+    })
 
     if(Auth.loggedIn()) {
         return (

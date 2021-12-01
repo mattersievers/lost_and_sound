@@ -10,28 +10,32 @@ function MyEquipment() {
     }
 
     return (
-        <>
-        <h1> My Equipment </h1>
-        {userData.me.savedEquipment.length 
-        ? `Viewing ${userData.me.firstName}  ${userData.me.lastName}'s equipment.`
-        : "You have not saved any equipment yet." }
+        <section className="home d-flex flex-column">
+            <div className="align-self-center  sectionHead">
+                <h1> My Equipment </h1>
+                <div className="userName">
+                {userData.me.savedEquipment.length 
+                ? `Viewing ${userData.me.firstName}  ${userData.me.lastName}'s equipment.`
+                : "You have not saved any equipment yet." }
+                </div>
+            </div>
 
-        {userData.me.savedEquipment.map((item) => {
-            return (
-                <ul>
-                    <li>Category: `{item.category}`</li>
-                    <li>Brand: `{item.brand}`</li>
-                    <li>Model: `{item.model}`</li>
-                    <li>Description: `{item.description}`</li>
-                    <li>Serial Number:  `{item.serialNumber}`</li>
-                    <li>Image: `{item.image}`</li>
-                    <li>{item.lost? `Your item has been reported lost.` : `You have this item.`}</li>
-                </ul>
-            )
-        })}
-        
-
-        </>
+            <div className="align-self-center userEquipment">
+                {userData.me.savedEquipment.map((item) => {
+                    return (
+                        <ul>
+                            <li>Category: `{item.category}`</li>
+                            <li>Brand: `{item.brand}`</li>
+                            <li>Model: `{item.model}`</li>
+                            <li>Description: `{item.description}`</li>
+                            <li>Serial Number:  `{item.serialNumber}`</li>
+                            <li>Image: `{item.image}`</li>
+                            <li>{item.lost? `Your item has been reported lost.` : `You have this item.`}</li>
+                        </ul>
+                    )
+                })}
+            </div>
+        </section>
     );
 }
 

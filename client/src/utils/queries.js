@@ -1,6 +1,7 @@
 import { gql } from '@apollo/client';
 
 export const GET_ME = gql`
+{
     me{
         firstName
         lastName
@@ -17,42 +18,47 @@ export const GET_ME = gql`
             lost
         }    
     }
-`;
+}`;
 
 export const GET_EQUIPMENT = gql`
-users {
-    savedEquipment{
-        _id
-        category
-        brand
-        model
-        description
-        serialNumber
-        image
-        location
-        lost
-    }    
-}
-`;
+{
+    users {
+        savedEquipment{
+            _id
+            category
+            brand
+            model
+            description
+            serialNumber
+            image
+            location
+            lost
+        }    
+    }
+}`;
 
 
 export const GET_MY_EQUIPMENT = gql`
-me {
-    savedEquipment{
-        _id
-        category
-        brand
-        model
-        description
-        serialNumber
-        image
-        location
-        lost
-    }    
-}
-`;
+{
+    me {
+        firstName
+        lastName
+        savedEquipment{
+            _id
+            category
+            brand
+            model
+            description
+            serialNumber
+            image
+            location
+            lost
+        }    
+    }
+}`;
 
 export const GET_USERS = gql` 
+{
     users{
       _id
       firstName
@@ -67,4 +73,4 @@ export const GET_USERS = gql`
         model
       }
     }
-`;
+}`;

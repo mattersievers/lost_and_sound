@@ -93,22 +93,42 @@ width: 100%;
 /* ---- Home ---- */
 .home{
   color: var(--black);
-
 }
 
 .home div{
   background-color:rgba(235, 226, 226, 0.6);
+  margin: 2vmax;
 }
 
 .home h1 {
-  padding: 5vmax;
+  padding: 3vmax;
   height: 25%;
-  font-size: 7vmin;;
+  font-size: 7vmin;
+  text-align: center;
 }
 
 .home p{
   width: 50vw;
   height: 50%px;
-  padding: 4vmax;
+  padding: 3vmax;
   font-size: 4vmin;
+  text-align: center;
+}
+
+.sectionHead {
+  width: 50vw;
+  height: 50%;
+  font-size: 4vmin;
+}
+
+.userEquipment {
+  width: 40vw;
+  height: 50%;
+  font-size: 4vmin;
+  padding-left: 10px;
+}
+
+.userName {
+  text-decoration: underline;
+  text-align: center;
 }

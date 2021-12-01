@@ -23,7 +23,7 @@ const Navigation = (props) => {
                             </li>    
                         ))}
                         <li>
-                        <a href="/" onClick={() => Auth.logout()}> Logout </a>
+                        <a className="navBtn" href="/" onClick={() => Auth.logout()}> Logout </a>
                         </li>
                     </ul>
             </section>

@@ -19,17 +19,18 @@ function Home() {
                 </p>
             </div>
             
-            <div>
+            <div className="align-self-center sectionHead">
                 <h1>Lost Equipment</h1>
             </div>
             
-            <div>
+            <div className="align-self-center userEquipment">
                 {userData.users.map((user) => {
                     return (
                     <>
-                    <div>
-                    {user.firstName} {user.lastName}
+                    <div className="userName">
+                        {user.firstName} {user.lastName}
                     </div>
+
                     {user.savedEquipment.map((item) => {
                         if (item.lost) {
                     return(
@@ -43,7 +44,7 @@ function Home() {
                             
                         </ul>
                     )}
-                    })};
+                    })}
                     </>
                     )
                 })}
@@ -53,14 +54,5 @@ function Home() {
         </section>
     )
 }
-/*              <h1 className="equipCat">{users.savedEquipment.category}</h1>
-                <p className="equipBrand">{users.equipment.brand}</p>
-                <p className="equipModel">{users.equipment.model}</p>
-                <p className="equipDesc">{users.equipment.description}</p>
-                <p className="equipNumber">{users.equipment.serialNumber}</p>
-                <p className="equipImage">{users.equipment.image}</p>
-                <p className="equipLocation">{users.equipment.location}</p>
-                <p className="equipModel">{users.equipment.model}</p> 
-*/
 
 export default Home;

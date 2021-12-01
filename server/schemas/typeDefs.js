@@ -1,6 +1,10 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
+    type Donate {
+        session: ID
+    }
+    
     input EquipmentInput{
         category: String 
         brand: String
@@ -47,6 +51,7 @@ const typeDefs = gql`
     type Query {
         me: User
         users: [User]
+        donate(amount: Int!): Donate
     }
 
     type Auth {

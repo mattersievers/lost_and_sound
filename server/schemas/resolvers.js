@@ -20,6 +20,36 @@ const resolvers = {
             return User.find()
             .select('-__v -password')
             .populate('savedEquipment')
+        },
+        donate: async (parent, args, context) => {
+            const url = new URL(context.headers.referer).origin;
+            const line_items = [];
+
+        
+            const product = await stripe.products.create({
+            name: "Donation",
+            description: "Thanks for your contribution"
+            });
+              
+            const price = await stripe.prices.create({
+            product: product.id,
+            unit_amount: args.amount * 100,
+            currency: 'usd'
+            });
+    
+            line_items.push({
+            price: price.id,
+            quantity: 1
+            });
+
+            const session = await stripe.checkout.sessions.create({
+                payment_method_types: ['card'],
+                line_items,
+                mode: 'payment',
+                success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
+                cancel_url: `${url}/`
+            }); 
+            return { session: session.id };
         }
     },
     Mutation: {

@@ -12,9 +12,8 @@ const Home = () => {
                 </p>
             </div>
             
-            <GET_EQUIPMENT {users.savedEquipment.category} />
             <div>
-                GET_MY_EQUIPMENT{}
+                
                 <h1 className="equipCat" {users.savedEquipment.category}></h1>
                 <p className="equipBrand">{users.equipment.brand}</p>
                 <p className="equipModel">{users.equipment.model}</p>

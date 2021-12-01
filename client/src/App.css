@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    
 }
 
 :root{
@@ -17,18 +18,17 @@
 /* ---- Main Body ---- */
 
 main{
-  min-height: 100vh;
   height: 100%;
   width: 100%;
   background-image: url(./assets/images/piano.png);
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
 }
 
 .pageContent{
   background-color: var(--light);
   width: 100vw;
+  
 }
 
 /* ---- Nav Bar & Header ----*/
@@ -97,7 +97,7 @@ width: 100%;
 }
 
 .home div{
-  background-color:rgba(235, 231, 226, 0.6);
+  background-color:rgba(235, 226, 226, 0.6);
 }
 
 .home h1 {

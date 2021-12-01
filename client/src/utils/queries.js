@@ -23,6 +23,8 @@ export const GET_ME = gql`
 export const GET_EQUIPMENT = gql`
 {
     users {
+        firstName
+        lastName
         savedEquipment{
             _id
             category

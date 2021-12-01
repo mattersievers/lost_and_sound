@@ -5,6 +5,7 @@ import LogIn from './components/LogIn';
 import SignUp from './components/SignUp';
 import EquipmentRegistration from './components/EquipmentRegistration';
 import MyEquipment from './components/MyEquipment';
+import Footer from './components/Footer';
 
 import './App.css';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
@@ -65,6 +66,8 @@ function App() {
         {currentPageSelection === "My Equipment" && <MyEquipment />}
 
         </main>
+
+        <Footer/>
       </div>
     </ApolloProvider>
     );

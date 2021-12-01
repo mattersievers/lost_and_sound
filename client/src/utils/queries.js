@@ -74,3 +74,11 @@ export const GET_USERS = gql`
       }
     }
 }`;
+
+export const DONATE = gql`
+    query getDonation($amount: Int!){
+        donate(amount: $amount) {
+            session
+        }
+    }
+`;

@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Advent Pro', sans-serif;
 }
 
 :root{
@@ -44,7 +45,7 @@ main{
 }
 
 .name{
-  color: var(--light);
+  color: var(--light-blue);
   font-size: 4vmax;
   margin-left: 3vw;
   text-shadow: 2px 1px black;
@@ -93,11 +94,13 @@ width: 100%;
 /* ---- Home ---- */
 .home{
   color: var(--black);
+  border-radius: 10px;
 }
 
 .home div{
   background-color:rgba(235, 226, 226, 0.6);
   margin: 2vmax;
+  border-radius: 10px;
 }
 
 .home h1 {
@@ -119,6 +122,7 @@ width: 100%;
   width: 50vw;
   height: 25%;
   font-size: 4vmin;
+  border-radius: 10px;
 }
 
 .userEquipment {
@@ -131,4 +135,18 @@ width: 100%;
 .userName {
   text-decoration: underline;
   text-align: center;
+}
+
+.contactPage {
+  background-color:rgba(235, 226, 226, 0.6);
+  width: 25vw;
+  border-radius: 10px;
+  margin: 0;
+  color: var(--light-blue);
+  text-shadow: 2px 1px black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
 }

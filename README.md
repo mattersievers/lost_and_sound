@@ -16,10 +16,12 @@
   This MERN stack website allows users to create accounts and report lost or stolen musical equipment as well as view their registered equipment and other user's lost equipment on the homepage.
 
   ## Install
-  Download the project files and run "npm install" to install the appropriate node packages. Using the "npm run develop" command will run both servers concurrently and produce the website at "http://localhost:3000/". Click the following link for the deployed version of the website:
+  Download the project files and run "npm install" to install the appropriate node packages. Using the "npm run develop" command will run both servers concurrently and produce the website at "http://localhost:3000/". 
   
   ## Use
-  N/a
+  ![homepage](./homepage.png)   
+
+  Click the following link for the deployed version of the website: [Lost and Sound](https://obscure-meadow-25830.herokuapp.com/)
   
   ## License
   Licensed under MIT License
